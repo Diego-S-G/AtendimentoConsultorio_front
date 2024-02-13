@@ -1,0 +1,11 @@
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+
+    .brand { }
+
+    .buttons {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
