@@ -14,12 +14,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
 
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CadastroPacienteComponent } from './components/pages/cadastro-paciente/cadastro-paciente.component';
 import { CadastroSalaComponent } from './components/pages/cadastro-sala/cadastro-sala.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListaMedicosComponent } from './components/pages/lista-medicos/lista-medicos.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomePageComponent,
     HeaderComponent,
     CadastroPacienteComponent,
-    CadastroSalaComponent
+    CadastroSalaComponent,
+    ListaMedicosComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatTableModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
