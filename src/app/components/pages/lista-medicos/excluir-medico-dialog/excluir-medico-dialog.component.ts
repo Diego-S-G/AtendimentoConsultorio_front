@@ -1,22 +1,21 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MedicoService } from 'src/app/services/medico.service';
-import { EditarDialogComponent } from '../editar-dialog/editar-dialog.component';
+import { EditarMedicoDialogComponent } from '../editar-medico-dialog/editar-medico-dialog.component';
 
 @Component({
-  selector: 'app-excluir-dialog',
-  templateUrl: './excluir-dialog.component.html',
-  styleUrls: ['./excluir-dialog.component.scss']
+  selector: 'app-excluir-medico-dialog',
+  templateUrl: './excluir-medico-dialog.component.html',
+  styleUrls: ['./excluir-medico-dialog.component.scss']
 })
-export class ExcluirDialogComponent implements OnInit {
+export class ExcluirMedicoDialogComponent implements OnInit {
 
   @Output() salvarClicado = new EventEmitter<string>();
 
   id: number = 0;
   nome: string = '';
 
-  constructor(public dialogRef: MatDialogRef<EditarDialogComponent>,
+  constructor(public dialogRef: MatDialogRef<EditarMedicoDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private service: MedicoService) { }
 

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SalaService } from 'src/app/services/sala.service';
 
 @Component({
   selector: 'app-cadastro-sala',
@@ -6,5 +8,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./cadastro-sala.component.scss']
 })
 export class CadastroSalaComponent {
+  form: FormGroup = this.montarForm();
 
+  constructor(
+    private formBuilder: FormBuilder,
+    private service: SalaService
+  ) {}
+
+  montarForm() {
+    return this.formBuilder.group({
+      sigla: ['',[Validators.required]],
+      descricao: ['',[Validators.required]]
+    })
+  }
+
+  gravar() {
+    var entity = this.form.value;
+    this.service.post(entity).subscribe(() => {
+      this.limparForm();
+    })
+  }
+
+  limparForm() {
+    this.form.reset();
+  }
 }

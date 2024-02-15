@@ -24,7 +24,7 @@ export class CadastroMedicoComponent {
 
   gravar() {
     var entity = this.form.value
-    this.service.post(entity).subscribe((dados) => {
+    this.service.post(entity).subscribe(() => {
       this.limparForm();
     })
   }

@@ -26,8 +26,11 @@ import { CadastroPacienteComponent } from './components/pages/cadastro-paciente/
 import { CadastroSalaComponent } from './components/pages/cadastro-sala/cadastro-sala.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListaMedicosComponent } from './components/pages/lista-medicos/lista-medicos.component';
-import { EditarDialogComponent } from './components/pages/lista-medicos/editar-dialog/editar-dialog.component';
-import { ExcluirDialogComponent } from './components/pages/lista-medicos/excluir-dialog/excluir-dialog.component';
+import { EditarMedicoDialogComponent } from './components/pages/lista-medicos/editar-medico-dialog/editar-medico-dialog.component';
+import { ExcluirMedicoDialogComponent } from './components/pages/lista-medicos/excluir-medico-dialog/excluir-medico-dialog.component';
+import { ListaSalasComponent } from './components/pages/lista-salas/lista-salas.component';
+import { EditarSalaDialogComponent } from './components/pages/lista-salas/editar-sala-dialog/editar-sala-dialog.component';
+import { ExcluirSalaDialogComponent } from './components/pages/lista-salas/excluir-sala-dialog/excluir-sala-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +41,11 @@ import { ExcluirDialogComponent } from './components/pages/lista-medicos/excluir
     CadastroPacienteComponent,
     CadastroSalaComponent,
     ListaMedicosComponent,
-    EditarDialogComponent,
-    ExcluirDialogComponent
+    EditarMedicoDialogComponent,
+    ExcluirMedicoDialogComponent,
+    ListaSalasComponent,
+    EditarSalaDialogComponent,
+    ExcluirSalaDialogComponent
   ],
   imports: [
     BrowserModule,

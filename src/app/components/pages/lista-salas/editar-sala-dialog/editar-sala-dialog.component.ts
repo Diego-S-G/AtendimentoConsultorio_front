@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MedicoService } from 'src/app/services/medico.service';
+import { SalaService } from 'src/app/services/sala.service';
 
 @Component({
-  selector: 'app-editar-dialog',
-  templateUrl: './editar-dialog.component.html',
-  styleUrls: ['./editar-dialog.component.scss']
+  selector: 'app-editar-sala-dialog',
+  templateUrl: './editar-sala-dialog.component.html',
+  styleUrls: ['./editar-sala-dialog.component.scss']
 })
-export class EditarDialogComponent implements OnInit {
+export class EditarSalaDialogComponent implements OnInit {
   form: FormGroup = this.montarForm();
 
   @Output() salvarClicado = new EventEmitter<string>();
@@ -16,16 +16,16 @@ export class EditarDialogComponent implements OnInit {
   montarForm() {
     return this.formBuilder.group({
       id: [0],
-      nome: ['', [Validators.required]],
-      especialidade: ['', [Validators.required]]
+      sigla: ['', [Validators.required]],
+      descricao: ['', [Validators.required]]
     })
   }
 
   carregarFormTela() {
     const dados = {
       id: this.data.id,
-      nome: this.data.nome,
-      especialidade: this.data.especialidade
+      sigla: this.data.sigla,
+      descricao: this.data.descricao
     }
     this.form.patchValue(dados);
   }
@@ -42,10 +42,10 @@ export class EditarDialogComponent implements OnInit {
     this.form.reset();
   }
 
-  constructor(public dialogRef: MatDialogRef<EditarDialogComponent>,
+  constructor(public dialogRef: MatDialogRef<EditarSalaDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder,
-    private service: MedicoService) { }
+    private service: SalaService) { }
 
 
   ngOnInit(): void {
@@ -54,6 +54,6 @@ export class EditarDialogComponent implements OnInit {
 
   fecharDialog(): void {
     this.dialogRef.close();
-    this.salvarClicado.emit('Médico editado com sucesso!');
+    this.salvarClicado.emit('Sala editada com sucesso!');
   }
 }

@@ -1,34 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { MedicoService } from 'src/app/services/medico.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { EditarMedicoDialogComponent } from './editar-medico-dialog/editar-medico-dialog.component';
-import { ExcluirMedicoDialogComponent } from './excluir-medico-dialog/excluir-medico-dialog.component';
+import { SalaService } from 'src/app/services/sala.service';
+import { EditarSalaDialogComponent } from './editar-sala-dialog/editar-sala-dialog.component';
+import { ExcluirSalaDialogComponent } from './excluir-sala-dialog/excluir-sala-dialog.component';
+
 
 @Component({
-  selector: 'app-lista-medicos',
-  templateUrl: './lista-medicos.component.html',
-  styleUrls: ['./lista-medicos.component.scss'],
+  selector: 'app-lista-salas',
+  templateUrl: './lista-salas.component.html',
+  styleUrls: ['./lista-salas.component.scss'],
 })
-export class ListaMedicosComponent implements OnInit {
+export class ListaSalasComponent implements OnInit {
 
-  medicos: any = [];
-  displayedColumns: string[] = ['nome', 'especialidade', 'buttons'];
+  salas: any = [];
+  displayedColumns: string[] = ['sigla', 'descricao', 'buttons'];
   dataSource: any;
 
-  constructor(private service: MedicoService,
+  constructor(private service: SalaService,
     private _snackBar: MatSnackBar,
     public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.obterMedicos();
+    this.obterSalas();
   }
 
-  obterMedicos() {
+  obterSalas() {
     return this.service.get().subscribe((dados) => {
-      this.medicos = dados;
-      this.dataSource = new MatTableDataSource(this.medicos);
+      this.salas = dados;
+      this.dataSource = new MatTableDataSource(this.salas);
     });
   }
 
@@ -44,14 +45,14 @@ export class ListaMedicosComponent implements OnInit {
     });
   }
 
-  editarDialog(medico: any): void {
-    const dialogRef = this.dialog.open(EditarMedicoDialogComponent, {
+  editarDialog(sala: any): void {
+    const dialogRef = this.dialog.open(EditarSalaDialogComponent, {
       width: '500px',
-      data: medico
+      data: sala
     });
     dialogRef.afterClosed().subscribe({
       next: () => {
-        this.obterMedicos();
+        this.obterSalas();
       }
     })
 
@@ -60,14 +61,14 @@ export class ListaMedicosComponent implements OnInit {
     })
   }
 
-  excluirDialog(medico: any): void {
-    const dialogRef = this.dialog.open(ExcluirMedicoDialogComponent, {
+  excluirDialog(sala: any): void {
+    const dialogRef = this.dialog.open(ExcluirSalaDialogComponent, {
       width: '500px',
-      data: medico
+      data: sala
     });
     dialogRef.afterClosed().subscribe({
       next: () => {
-        this.obterMedicos();
+        this.obterSalas();
       }
     })
 
