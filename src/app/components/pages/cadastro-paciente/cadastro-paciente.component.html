@@ -2,22 +2,22 @@
     <mat-card class="card">
         <mat-card-title>Novo Paciente:</mat-card-title>
         <mat-card-content>
-            <form class="form">
+            <form class="form" [formGroup]="form">
                 <mat-form-field>
                     <mat-label>Nome</mat-label>
-                    <input matInput required maxlength="50">
+                    <input matInput required formControlName="nome" maxlength="50">
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Sexo</mat-label>
-                    <mat-select required>
-                        <mat-option value="one">Masculino</mat-option>
-                        <mat-option value="two">Feminino</mat-option>
+                    <mat-select required formControlName="sexo">
+                        <mat-option value="0">Masculino</mat-option>
+                        <mat-option value="1">Feminino</mat-option>
                       </mat-select>
                 </mat-form-field>
             </form>
         </mat-card-content>
         <mat-card-actions class="buttons">
-            <button mat-raised-button color="primary">Cadastrar</button>
+            <button mat-raised-button color="primary" (click)="gravar()">Cadastrar</button>
             <button mat-raised-button color="warn" routerLink="/">Voltar</button>
         </mat-card-actions>
     </mat-card>
