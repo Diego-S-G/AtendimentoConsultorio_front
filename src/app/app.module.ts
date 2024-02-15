@@ -17,6 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
@@ -25,6 +26,7 @@ import { CadastroPacienteComponent } from './components/pages/cadastro-paciente/
 import { CadastroSalaComponent } from './components/pages/cadastro-sala/cadastro-sala.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListaMedicosComponent } from './components/pages/lista-medicos/lista-medicos.component';
+import { EditarDialogComponent } from './components/pages/lista-medicos/editar-dialog/editar-dialog.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { ListaMedicosComponent } from './components/pages/lista-medicos/lista-me
     HeaderComponent,
     CadastroPacienteComponent,
     CadastroSalaComponent,
-    ListaMedicosComponent
+    ListaMedicosComponent,
+    EditarDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { ListaMedicosComponent } from './components/pages/lista-medicos/lista-me
     ReactiveFormsModule,
     MatTableModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

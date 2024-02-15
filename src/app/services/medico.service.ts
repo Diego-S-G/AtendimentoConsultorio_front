@@ -12,7 +12,7 @@ export class MedicoService {
 
   constructor(private http: HttpClient) { }
 
-  get():Observable<IMedico> {
+  get(): Observable<IMedico> {
     return this.http.get<IMedico>(this.url);
   }
 
@@ -20,7 +20,11 @@ export class MedicoService {
     return this.http.post(this.url, entity);
   }
 
-  delete(id:number) {
+  delete(id: number) {
     return this.http.delete(this.url + `/${id}`)
+  }
+
+  put(entity: IMedico ) {
+    return this.http.put(this.url, entity);
   }
 }

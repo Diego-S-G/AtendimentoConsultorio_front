@@ -17,7 +17,6 @@ export class CadastroMedicoComponent {
 
   montarForm() {
     return this.formBuilder.group({
-      //id: [0],
       nome: ['',[Validators.required]],
       especialidade: ['',[Validators.required]]
     })

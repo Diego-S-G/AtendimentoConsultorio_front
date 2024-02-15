@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MedicoService } from 'src/app/services/medico.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { EditarDialogComponent } from './editar-dialog/editar-dialog.component';
 
 @Component({
   selector: 'app-lista-medicos',
@@ -15,7 +17,8 @@ export class ListaMedicosComponent implements OnInit {
   dataSource: any;
 
   constructor(private service: MedicoService,
-    private _snackBar: MatSnackBar) { }
+    private _snackBar: MatSnackBar,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.obterMedicos();
@@ -32,7 +35,7 @@ export class ListaMedicosComponent implements OnInit {
     return this.service.delete(id).subscribe({
       next: () =>{
         this.obterMedicos();
-        this.openSnackBar();
+        this.openSnackBar('Médico excluído com sucesso!');
       }})
     }
 
@@ -41,10 +44,25 @@ export class ListaMedicosComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  openSnackBar() {
-    this._snackBar.open('Médico excluído com sucesso!', 'Ok', {
+  openSnackBar(mensagem: string) {
+    this._snackBar.open(mensagem, 'Ok', {
       horizontalPosition: 'center',
       verticalPosition: 'top'
     });
   }
+
+  editarDialog(medico: any): void {
+    const dialogRef = this.dialog.open(EditarDialogComponent, {
+      width: '500px',
+      data: medico
+    });
+    dialogRef.afterClosed().subscribe({next: () => { 
+      this.obterMedicos();
+    }
+   })
+
+   dialogRef.componentInstance.salvarClicado.subscribe((mensagem: string) => {
+    this.openSnackBar(mensagem);
+  })
+}
 }

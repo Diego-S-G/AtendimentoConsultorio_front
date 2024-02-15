@@ -19,7 +19,7 @@
         <ng-container matColumnDef="buttons">
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let medico">
-                <button mat-icon-button color="primary">
+                <button (click)="editarDialog(medico)" mat-icon-button color="primary">
                     <mat-icon>edit</mat-icon>
                 </button>
                 <button (click)="apagarMedico(medico.id)" mat-icon-button color="warn">
