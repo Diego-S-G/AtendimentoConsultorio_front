@@ -7,9 +7,13 @@ import { CadastroSalaComponent } from './components/pages/cadastro-sala/cadastro
 import { ListaMedicosComponent } from './components/pages/lista-medicos/lista-medicos.component';
 import { ListaSalasComponent } from './components/pages/lista-salas/lista-salas.component';
 import { ListaPacientesComponent } from './components/pages/lista-pacientes/lista-pacientes.component';
+import { CadastroAtendimentoComponent } from './components/pages/cadastro-atendimento/cadastro-atendimento.component';
+import { ListaAtendimentosComponent } from './components/pages/lista-atendimentos/lista-atendimentos.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
+  { path: 'cadastrar-atendimento', component: CadastroAtendimentoComponent },
+  { path: 'lista-atendimentos', component: ListaAtendimentosComponent },
   { path: 'cadastrar-medico', component: CadastroMedicoComponent },
   { path: 'lista-medicos', component: ListaMedicosComponent },
   { path: 'cadastrar-paciente', component: CadastroPacienteComponent },

@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { PacienteService } from 'src/app/services/paciente.service';
-import { EditarPacienteDialogComponent } from '../editar-paciente-dialog/editar-paciente-dialog.component';
 
 @Component({
   selector: 'app-excluir-paciente-dialog',
@@ -15,7 +14,7 @@ export class ExcluirPacienteDialogComponent implements OnInit {
   id: number = 0;
   nome: string = '';
 
-  constructor(public dialogRef: MatDialogRef<EditarPacienteDialogComponent>,
+  constructor(public dialogRef: MatDialogRef<ExcluirPacienteDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private service: PacienteService) { }
 

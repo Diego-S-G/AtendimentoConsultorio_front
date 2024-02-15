@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { EditarSalaDialogComponent } from '../editar-sala-dialog/editar-sala-dialog.component';
 import { SalaService } from 'src/app/services/sala.service';
 
 @Component({
@@ -16,7 +15,7 @@ export class ExcluirSalaDialogComponent implements OnInit {
   sigla: string = '';
   descricao: string = '';
 
-  constructor(public dialogRef: MatDialogRef<EditarSalaDialogComponent>,
+  constructor(public dialogRef: MatDialogRef<ExcluirSalaDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private service: SalaService) { }
 

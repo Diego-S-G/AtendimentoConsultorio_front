@@ -1,22 +1,27 @@
 <mat-toolbar class="toolbar">
-    <div class="brand">
-        <span>Atendimento Consultório</span>
-    </div>
-    <div class="buttons">
-        <button mat-button [matMenuTriggerFor]="menuMedico">Médicos</button>
-        <button mat-button [matMenuTriggerFor]="menuPaciente">Pacientes</button>
-        <button mat-button [matMenuTriggerFor]="menuSala">Salas</button>
-    </div>
-    <mat-menu #menuMedico="matMenu">
-        <button routerLink="/cadastrar-medico" mat-menu-item>Cadastrar Médico</button>
-        <button routerLink="/lista-medicos" mat-menu-item>Lista de Médicos</button>
-      </mat-menu>
-      <mat-menu #menuPaciente="matMenu">
-        <button routerLink="/cadastrar-paciente" mat-menu-item>Cadastrar Paciente</button>
-        <button routerLink="/lista-pacientes" mat-menu-item>Lista de Pacientes</button>
-      </mat-menu>
-      <mat-menu #menuSala="matMenu">
-        <button routerLink="/cadastrar-sala" mat-menu-item>Cadastrar Sala</button>
-        <button routerLink="/lista-salas" mat-menu-item>Lista de Salas</button>
-      </mat-menu>
+  <div class="brand">
+    <span>Atendimento Consultório</span>
+  </div>
+  <div class="buttons">
+    <button mat-button [matMenuTriggerFor]="menuAtendimento">Atendimentos</button>
+    <button mat-button [matMenuTriggerFor]="menuMedico">Médicos</button>
+    <button mat-button [matMenuTriggerFor]="menuPaciente">Pacientes</button>
+    <button mat-button [matMenuTriggerFor]="menuSala">Salas</button>
+  </div>
+  <mat-menu #menuAtendimento="matMenu">
+    <button routerLink="/cadastrar-atendimento" mat-menu-item>Cadastrar Atendimento</button>
+    <button routerLink="/lista-atendimentos" mat-menu-item>Lista de Atendimentos</button>
+  </mat-menu>
+  <mat-menu #menuMedico="matMenu">
+    <button routerLink="/cadastrar-medico" mat-menu-item>Cadastrar Médico</button>
+    <button routerLink="/lista-medicos" mat-menu-item>Lista de Médicos</button>
+  </mat-menu>
+  <mat-menu #menuPaciente="matMenu">
+    <button routerLink="/cadastrar-paciente" mat-menu-item>Cadastrar Paciente</button>
+    <button routerLink="/lista-pacientes" mat-menu-item>Lista de Pacientes</button>
+  </mat-menu>
+  <mat-menu #menuSala="matMenu">
+    <button routerLink="/cadastrar-sala" mat-menu-item>Cadastrar Sala</button>
+    <button routerLink="/lista-salas" mat-menu-item>Lista de Salas</button>
+  </mat-menu>
 </mat-toolbar>
