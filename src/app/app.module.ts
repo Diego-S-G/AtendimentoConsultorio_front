@@ -15,6 +15,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -47,8 +50,9 @@ import { ListaMedicosComponent } from './components/pages/lista-medicos/lista-me
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatTableModule
-
+    MatTableModule,
+    MatIconModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

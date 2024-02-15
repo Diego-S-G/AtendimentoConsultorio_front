@@ -19,4 +19,8 @@ export class MedicoService {
   post(entity: any) {
     return this.http.post(this.url, entity);
   }
+
+  delete(id:number) {
+    return this.http.delete(this.url + `/${id}`)
+  }
 }
