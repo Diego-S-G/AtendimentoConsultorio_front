@@ -27,6 +27,7 @@ import { CadastroSalaComponent } from './components/pages/cadastro-sala/cadastro
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListaMedicosComponent } from './components/pages/lista-medicos/lista-medicos.component';
 import { EditarDialogComponent } from './components/pages/lista-medicos/editar-dialog/editar-dialog.component';
+import { ExcluirDialogComponent } from './components/pages/lista-medicos/excluir-dialog/excluir-dialog.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EditarDialogComponent } from './components/pages/lista-medicos/editar-d
     CadastroPacienteComponent,
     CadastroSalaComponent,
     ListaMedicosComponent,
-    EditarDialogComponent
+    EditarDialogComponent,
+    ExcluirDialogComponent
   ],
   imports: [
     BrowserModule,
