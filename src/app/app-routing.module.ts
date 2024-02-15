@@ -6,12 +6,14 @@ import { CadastroPacienteComponent } from './components/pages/cadastro-paciente/
 import { CadastroSalaComponent } from './components/pages/cadastro-sala/cadastro-sala.component';
 import { ListaMedicosComponent } from './components/pages/lista-medicos/lista-medicos.component';
 import { ListaSalasComponent } from './components/pages/lista-salas/lista-salas.component';
+import { ListaPacientesComponent } from './components/pages/lista-pacientes/lista-pacientes.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'cadastrar-medico', component: CadastroMedicoComponent },
   { path: 'lista-medicos', component: ListaMedicosComponent },
   { path: 'cadastrar-paciente', component: CadastroPacienteComponent },
+  { path: 'lista-pacientes', component: ListaPacientesComponent },
   { path: 'cadastrar-sala', component: CadastroSalaComponent },
   { path: 'lista-salas', component: ListaSalasComponent }
 ];

@@ -31,6 +31,9 @@ import { ExcluirMedicoDialogComponent } from './components/pages/lista-medicos/e
 import { ListaSalasComponent } from './components/pages/lista-salas/lista-salas.component';
 import { EditarSalaDialogComponent } from './components/pages/lista-salas/editar-sala-dialog/editar-sala-dialog.component';
 import { ExcluirSalaDialogComponent } from './components/pages/lista-salas/excluir-sala-dialog/excluir-sala-dialog.component';
+import { ListaPacientesComponent } from './components/pages/lista-pacientes/lista-pacientes.component';
+import { EditarPacienteDialogComponent } from './components/pages/lista-pacientes/editar-paciente-dialog/editar-paciente-dialog.component';
+import { ExcluirPacienteDialogComponent } from './components/pages/lista-pacientes/excluir-paciente-dialog/excluir-paciente-dialog.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { ExcluirSalaDialogComponent } from './components/pages/lista-salas/exclu
     ExcluirMedicoDialogComponent,
     ListaSalasComponent,
     EditarSalaDialogComponent,
-    ExcluirSalaDialogComponent
+    ExcluirSalaDialogComponent,
+    ListaPacientesComponent,
+    EditarPacienteDialogComponent,
+    ExcluirPacienteDialogComponent
   ],
   imports: [
     BrowserModule,
