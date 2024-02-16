@@ -38,10 +38,10 @@ import { CadastroAtendimentoComponent } from './components/pages/cadastro-atendi
 import { ListaAtendimentosComponent } from './components/pages/lista-atendimentos/lista-atendimentos.component';
 import { ExcluirAtendimentoDialogComponent } from './components/pages/lista-atendimentos/excluir-atendimento-dialog/excluir-atendimento-dialog.component';
 import { GerenciamentoAtendimentoComponent } from './components/pages/gerenciamento-atendimento/gerenciamento-atendimento.component';
-import { TelaPacienteComponent } from './components/pages/tela-paciente/tela-paciente.component';
 import { IniciarAtendimentoDialogComponent } from './components/pages/gerenciamento-atendimento/iniciar-atendimento-dialog/iniciar-atendimento-dialog.component';
 import { FinalizarAtendimentoDialogComponent } from './components/pages/gerenciamento-atendimento/finalizar-atendimento-dialog/finalizar-atendimento-dialog.component';
 import { CancelarAtendimentoDialogComponent } from './components/pages/gerenciamento-atendimento/cancelar-atendimento-dialog/cancelar-atendimento-dialog.component';
+import { ApresentacaoAtendimentoComponent } from './components/pages/apresentacao-atendimento/apresentacao-atendimento.component';
 
 @NgModule({
   declarations: [
@@ -64,10 +64,10 @@ import { CancelarAtendimentoDialogComponent } from './components/pages/gerenciam
     ListaAtendimentosComponent,
     ExcluirAtendimentoDialogComponent,
     GerenciamentoAtendimentoComponent,
-    TelaPacienteComponent,
     IniciarAtendimentoDialogComponent,
     FinalizarAtendimentoDialogComponent,
-    CancelarAtendimentoDialogComponent
+    CancelarAtendimentoDialogComponent,
+    ApresentacaoAtendimentoComponent
   ],
   imports: [
     BrowserModule,

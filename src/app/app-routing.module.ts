@@ -10,7 +10,7 @@ import { ListaPacientesComponent } from './components/pages/lista-pacientes/list
 import { CadastroAtendimentoComponent } from './components/pages/cadastro-atendimento/cadastro-atendimento.component';
 import { ListaAtendimentosComponent } from './components/pages/lista-atendimentos/lista-atendimentos.component';
 import { GerenciamentoAtendimentoComponent } from './components/pages/gerenciamento-atendimento/gerenciamento-atendimento.component';
-import { TelaPacienteComponent } from './components/pages/tela-paciente/tela-paciente.component';
+import { ApresentacaoAtendimentoComponent } from './components/pages/apresentacao-atendimento/apresentacao-atendimento.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'cadastrar-sala', component: CadastroSalaComponent },
   { path: 'lista-salas', component: ListaSalasComponent },
   { path: 'gerenciar-atendimento', component: GerenciamentoAtendimentoComponent },
-  { path: 'tela-paciente', component: TelaPacienteComponent }
+  { path: 'apresentacao-atendimento', component: ApresentacaoAtendimentoComponent }
 ];
 
 @NgModule({

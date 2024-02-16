@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IAtendimento } from '../interfaces/IAtendimento';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,10 @@ export class AtendimentoService {
 
   get(): Observable<IAtendimento> {
     return this.http.get<IAtendimento>(this.url);
+  }
+
+  getFinalizados(take: number): Observable<IAtendimento> {
+    return this.http.get<IAtendimento>(this.url + `/${take}`)
   }
 
   post(entity: any) {
