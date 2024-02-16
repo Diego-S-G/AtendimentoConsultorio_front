@@ -9,6 +9,8 @@ import { ListaSalasComponent } from './components/pages/lista-salas/lista-salas.
 import { ListaPacientesComponent } from './components/pages/lista-pacientes/lista-pacientes.component';
 import { CadastroAtendimentoComponent } from './components/pages/cadastro-atendimento/cadastro-atendimento.component';
 import { ListaAtendimentosComponent } from './components/pages/lista-atendimentos/lista-atendimentos.component';
+import { GerenciamentoAtendimentoComponent } from './components/pages/gerenciamento-atendimento/gerenciamento-atendimento.component';
+import { TelaPacienteComponent } from './components/pages/tela-paciente/tela-paciente.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -19,7 +21,9 @@ const routes: Routes = [
   { path: 'cadastrar-paciente', component: CadastroPacienteComponent },
   { path: 'lista-pacientes', component: ListaPacientesComponent },
   { path: 'cadastrar-sala', component: CadastroSalaComponent },
-  { path: 'lista-salas', component: ListaSalasComponent }
+  { path: 'lista-salas', component: ListaSalasComponent },
+  { path: 'gerenciar-atendimento', component: GerenciamentoAtendimentoComponent },
+  { path: 'tela-paciente', component: TelaPacienteComponent }
 ];
 
 @NgModule({

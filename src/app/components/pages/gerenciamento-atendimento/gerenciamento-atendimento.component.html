@@ -1,0 +1,57 @@
+<div class="main-container">
+    <mat-form-field>
+        <mat-label>Filtro</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Informações do seu atendimento" #input>
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="medico">
+            <th mat-header-cell *matHeaderCellDef> Médico responsável </th>
+            <td mat-cell *matCellDef="let atendimento"> {{atendimento.nomeMedico}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="paciente">
+            <th mat-header-cell *matHeaderCellDef> Paciente </th>
+            <td mat-cell *matCellDef="let atendimento"> {{atendimento.nomePaciente}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="sala">
+            <th mat-header-cell *matHeaderCellDef> Sala de atendimento</th>
+            <td mat-cell *matCellDef="let atendimento"> {{atendimento.nomeSala}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataHora">
+            <th mat-header-cell *matHeaderCellDef> Data de atendimento </th>
+            <td mat-cell *matCellDef="let atendimento"> {{ atendimento.dataHora | date: 'dd/MM/yyyy HH:mm:ss' }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let atendimento"> {{ atendimento.status == 0 ? 'Aguardando' :
+                (atendimento.status == 1 ? 'Em Andamento' : (atendimento.status == 2 ? 'Atendido' : (atendimento.status
+                == 3 ? 'Cancelado' : 'Valor inválido')))}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="buttons-container">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let atendimento">
+                <div class="buttons">
+                    <button mat-stroked-button color="primary" class="iniciar" (click)="iniciarDialog(atendimento)"
+                        disabled="{{atendimento.status != 0}}">Iniciar</button>
+                    <button mat-stroked-button color="primary" class="finalizar"
+                        (click)="finalizarDialog(atendimento)" disabled="{{atendimento.status != 1}}">Finalizar</button>
+                    <button mat-stroked-button color="warn" class="cancelar"
+                        (click)="cancelarDialog(atendimento)" disabled="{{atendimento.status == 2 || atendimento.status == 3 }}">Cancelar</button>
+                </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">Nenhum dado com o filtro "{{input.value}}"</td>
+        </tr>
+    </table>
+</div>

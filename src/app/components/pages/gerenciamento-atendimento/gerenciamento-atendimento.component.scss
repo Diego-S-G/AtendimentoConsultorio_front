@@ -1,0 +1,53 @@
+.main-container {
+    margin-left: 10%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+    .mat-mdc-form-field {
+        margin-top: 7%;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            
+            .iniciar {
+                color: #00AB66;
+                font-weight: bold;
+                transition: .4s;
+            }
+            .iniciar:hover {
+                color: white;
+                background-color: #00AB66;
+            }
+
+            .finalizar {
+                color: #6F7DC8;
+                font-weight: bold;
+                transition: .4s;
+            }
+            .finalizar:hover {
+                color: white;
+                background-color: #6F7DC8;
+            }
+
+            .cancelar {
+                color: #F44336;
+                font-weight: bold;
+                transition: .4s;
+            }
+            .cancelar:hover {
+                color: white;
+                background-color: #F44336;
+            }
+        }
+
+    }
+
+}
