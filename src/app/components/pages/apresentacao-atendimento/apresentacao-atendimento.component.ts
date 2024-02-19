@@ -1,14 +1,13 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { AtendimentoService } from 'src/app/services/atendimento.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-apresentacao-atendimento',
   templateUrl: './apresentacao-atendimento.component.html',
   styleUrls: ['./apresentacao-atendimento.component.scss']
 })
-export class ApresentacaoAtendimentoComponent {
+export class ApresentacaoAtendimentoComponent implements OnInit, AfterViewInit {
   atendimentosFinalizados: any = [];
   atendimentosEmAndamento: any = [];
   displayedColumns: string[] = ['medico', 'paciente', 'sala', 'dataHora', 'status'];
@@ -16,8 +15,17 @@ export class ApresentacaoAtendimentoComponent {
   finalizadosDataSource: any;
   emAndamentoDataSource: any;
 
-  constructor(private service: AtendimentoService,
-    private _snackBar: MatSnackBar) { }
+  constructor(private service: AtendimentoService) { }
+
+  ngAfterViewInit() {
+    setInterval(() => {
+      this.atualizarPagina();
+    }, 5000);
+  }
+
+  atualizarPagina() {
+    location.reload();
+  }
 
   ngOnInit(): void {
     this.obterEmAndamento();
