@@ -21,7 +21,7 @@ export class SalaService {
   }
 
   delete(id: number) {
-    return this.http.delete(this.url + `/${id}`)
+    return this.http.delete(`${this.url}/${id}`)
   }
 
   put(entity: ISala ) {

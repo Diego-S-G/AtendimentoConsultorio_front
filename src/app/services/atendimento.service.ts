@@ -16,7 +16,11 @@ export class AtendimentoService {
   }
 
   getFinalizados(take: number): Observable<IAtendimento> {
-    return this.http.get<IAtendimento>(this.url + `/${take}`)
+    return this.http.get<IAtendimento>(`${this.url}/${take}`)
+  }
+
+  getEmAndamento(): Observable<IAtendimento> {
+    return this.http.get<IAtendimento>(`${this.url}/Andamento`);
   }
 
   post(entity: any) {
@@ -24,7 +28,7 @@ export class AtendimentoService {
   }
 
   delete(id: number) {
-    return this.http.delete(this.url + `/${id}`)
+    return this.http.delete(`${this.url}/${id}`)
   }
 
   put(entity: IAtendimento ) {
