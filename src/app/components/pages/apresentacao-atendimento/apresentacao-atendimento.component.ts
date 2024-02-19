@@ -9,7 +9,8 @@ import { AtendimentoService } from 'src/app/services/atendimento.service';
 })
 export class ApresentacaoAtendimentoComponent implements OnInit, AfterViewInit {
   atendimentosFinalizados: any = [];
-  atendimentosEmAndamento: any = [];
+  atendimentoPrimeiroEmAndamento: any;
+  atendimentosRestoEmAndamento: any = [];
   displayedColumns: string[] = ['medico', 'paciente', 'sala', 'dataHora', 'status'];
   displayedAndamentoColumns: string[] = ['paciente-andamento', 'sala-andamento'];
   finalizadosDataSource: any;
@@ -28,8 +29,16 @@ export class ApresentacaoAtendimentoComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.obterEmAndamento();
+    this.obterPrimeiroEmAndamento();
+    this.obterRestoEmAndamento();
     this.obterAtendimentos();
+  }
+
+  obterRestoEmAndamento() {
+    return this.service.getRestoEmAndamento().subscribe((dados) => {
+      this.atendimentosRestoEmAndamento = dados;
+      this.emAndamentoDataSource = new MatTableDataSource(this.atendimentosRestoEmAndamento);
+    })
   }
 
   obterAtendimentos() {
@@ -39,10 +48,9 @@ export class ApresentacaoAtendimentoComponent implements OnInit, AfterViewInit {
     });
   }
 
-  obterEmAndamento() {
-    return this.service.getEmAndamento().subscribe((dados) => {
-      this.atendimentosEmAndamento = dados;
-      this.emAndamentoDataSource = new MatTableDataSource(this.atendimentosEmAndamento);
+  obterPrimeiroEmAndamento() {
+    return this.service.getPrimeiroEmAndamento().subscribe((dados) => {
+      this.atendimentoPrimeiroEmAndamento = dados;
     })
   }
 }

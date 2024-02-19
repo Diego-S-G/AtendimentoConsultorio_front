@@ -20,6 +20,7 @@
             .paciente-card {
                 margin-bottom: 10px;
                 min-height: 200px;
+
                 h1 {
                     display: flex;
                     justify-content: center;
@@ -31,6 +32,7 @@
             .medico-card {
                 margin-bottom: 10px;
                 min-height: 150px;
+
                 h1 {
                     display: flex;
                     justify-content: center;
@@ -51,6 +53,7 @@
             .sala-card {
                 margin-bottom: 10px;
                 min-height: 200px;
+
                 h1 {
                     display: flex;
                     justify-content: center;
@@ -61,13 +64,15 @@
 
             .atendendo-card {
                 min-height: 150px;
+                min-height: 150px;
+                max-height: 150px;
+                overflow-y: auto;
+
+                .atendimentosEmAndamento {
+                    font-size: 14px;
+                    margin-bottom: 5px;
+                }
             }
         }
-    }
-
-    .atendendo-card {
-        min-height: 150px;
-        max-height: 150px;
-        overflow-y: auto;
     }
 }

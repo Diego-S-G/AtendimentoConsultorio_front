@@ -19,8 +19,12 @@ export class AtendimentoService {
     return this.http.get<IAtendimento>(`${this.url}/${take}`)
   }
 
-  getEmAndamento(): Observable<IAtendimento> {
-    return this.http.get<IAtendimento>(`${this.url}/Andamento`);
+  getPrimeiroEmAndamento(): Observable<IAtendimento> {
+    return this.http.get<IAtendimento>(`${this.url}/FirstAndamento`);
+  }
+
+  getRestoEmAndamento(): Observable<IAtendimento> {
+    return this.http.get<IAtendimento>(`${this.url}/RestoAndamento`);
   }
 
   post(entity: any) {

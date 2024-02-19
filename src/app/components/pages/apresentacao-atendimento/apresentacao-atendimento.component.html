@@ -5,13 +5,13 @@
                 <mat-card class="paciente-card">
                     <mat-card-content>
                         <mat-card-title>Paciente:</mat-card-title>
-                        <h1>{{atendimentosEmAndamento ? atendimentosEmAndamento[0].nomePaciente : ""}}</h1>
+                        <h1>{{atendimentoPrimeiroEmAndamento ? atendimentoPrimeiroEmAndamento?.nomePaciente : ""}}</h1>
                     </mat-card-content>
                 </mat-card>
                 <mat-card class="medico-card">
                     <mat-card-content>
                         <mat-card-title>Médico:</mat-card-title>
-                        <h1>{{atendimentosEmAndamento ? atendimentosEmAndamento[0].nomeMedico : ""}}</h1>
+                        <h1>{{atendimentoPrimeiroEmAndamento ? atendimentoPrimeiroEmAndamento?.nomeMedico : ""}}</h1>
                     </mat-card-content>
                 </mat-card>
             </mat-card-content>
@@ -21,11 +21,12 @@
                 <mat-card class="sala-card">
                     <mat-card-content>
                         <mat-card-title>Sala:</mat-card-title>
-                        <h1>{{atendimentosEmAndamento ? atendimentosEmAndamento[0].nomeSala : ""}}</h1>
+                        <h1>{{atendimentoPrimeiroEmAndamento ? atendimentoPrimeiroEmAndamento?.nomeSala : ""}}</h1>
                     </mat-card-content>
                 </mat-card>
                 <mat-card class="atendendo-card">
                     <mat-card-content>
+                        <mat-card-title class="atendimentosEmAndamento">Atendimentos em Andamento:</mat-card-title>
                         <table mat-table [dataSource]="emAndamentoDataSource" class="mat-elevation-z0">
                             <ng-container matColumnDef="paciente-andamento">
                                 <th mat-header-cell *matHeaderCellDef> Paciente </th>
