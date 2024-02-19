@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { AtendimentoService } from 'src/app/services/atendimento.service';
 import { ExcluirAtendimentoDialogComponent } from './excluir-atendimento-dialog/excluir-atendimento-dialog.component';
+import { ExcluirTodosDialogComponent } from './excluir-todos-dialog/excluir-todos-dialog.component';
 
 @Component({
   selector: 'app-lista-atendimentos',
@@ -46,6 +47,21 @@ export class ListaAtendimentosComponent {
     const dialogRef = this.dialog.open(ExcluirAtendimentoDialogComponent, {
       width: '500px',
       data: atendimento
+    });
+    dialogRef.afterClosed().subscribe({
+      next: () => {
+        this.obterAtendimentos();
+      }
+    })
+
+    dialogRef.componentInstance.salvarClicado.subscribe((mensagem: string) => {
+      this.openSnackBar(mensagem);
+    })
+  }
+
+  excluirTodosDialog(): void {
+    const dialogRef = this.dialog.open(ExcluirTodosDialogComponent, {
+      width: '500px',
     });
     dialogRef.afterClosed().subscribe({
       next: () => {

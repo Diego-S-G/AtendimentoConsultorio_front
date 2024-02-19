@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AtendimentoService } from 'src/app/services/atendimento.service';
 import { MedicoService } from 'src/app/services/medico.service';
 import { PacienteService } from 'src/app/services/paciente.service';
@@ -21,7 +22,8 @@ export class CadastroAtendimentoComponent implements OnInit {
     private service: AtendimentoService,
     private medicoService: MedicoService,
     private pacienteService: PacienteService,
-    private salaService: SalaService
+    private salaService: SalaService,
+    private _snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -59,6 +61,7 @@ export class CadastroAtendimentoComponent implements OnInit {
   gravar() {
     this.service.post(this.form.value).subscribe(() => {
       this.limparForm();
+      this.openSnackBar();
     })
   }
 
@@ -66,4 +69,10 @@ export class CadastroAtendimentoComponent implements OnInit {
     this.form.reset();
   }
 
+  openSnackBar() {
+    this._snackBar.open('Atendimento cadastrado com sucesso!', 'Ok', {
+      horizontalPosition: 'center',
+      verticalPosition: 'top'
+    });
+  }
 }

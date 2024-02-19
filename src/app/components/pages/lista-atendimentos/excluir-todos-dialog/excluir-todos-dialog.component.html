@@ -1,0 +1,11 @@
+<div class="dialog-container">
+    <h2 mat-dialog-title>Excluir Atendimentos?</h2>
+    <mat-dialog-content>
+        Deseja excluir todos os atendimentos? <br>
+        <span>Atenção! Essa ação é irreversível!</span>
+    </mat-dialog-content>
+    <mat-dialog-actions class="buttons">
+        <button mat-button color="primary" (click)="excluirTodos()" [mat-dialog-close]="false">Excluir</button>
+        <button mat-button color="warn" mat-dialog-close cdkFocusInitial>Cancelar</button>
+    </mat-dialog-actions>
+</div>

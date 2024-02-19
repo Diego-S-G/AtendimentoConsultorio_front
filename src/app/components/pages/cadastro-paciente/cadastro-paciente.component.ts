@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { PacienteService } from 'src/app/services/paciente.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class CadastroPacienteComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private service: PacienteService
+    private service: PacienteService,
+    private _snackBar: MatSnackBar
   ) {}
 
   montarForm() {
@@ -25,10 +27,18 @@ export class CadastroPacienteComponent {
   gravar() {
     this.service.post(this.form.value).subscribe(() => {
       this.limparForm();
+      this.openSnackBar();
     })
   }
 
   limparForm() {
     this.form.reset();
+  }
+
+  openSnackBar() {
+    this._snackBar.open('Paciente cadastrado com sucesso!', 'Ok', {
+      horizontalPosition: 'center',
+      verticalPosition: 'top'
+    });
   }
 }

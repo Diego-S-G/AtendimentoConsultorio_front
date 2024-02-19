@@ -34,9 +34,9 @@
         </ng-container>
 
         <ng-container matColumnDef="buttons">
-            <th mat-header-cell *matHeaderCellDef></th>
+            <th mat-header-cell *matHeaderCellDef><button (click)="excluirTodosDialog()" mat-raised-button color="warn">Excluir todos</button></th>
             <td mat-cell *matCellDef="let atendimento">
-                <button (click)="excluirDialog(atendimento)" mat-icon-button color="warn">
+                <button (click)="excluirDialog(atendimento)" mat-icon-button color="warn" class="deleteButton">
                     <mat-icon>delete</mat-icon>
                 </button>
             </td>

@@ -31,6 +31,10 @@ export class AtendimentoService {
     return this.http.delete(`${this.url}/${id}`)
   }
 
+  deleteAll() {
+    return this.http.delete(this.url);
+  }
+
   put(entity: IAtendimento ) {
     return this.http.put(this.url, entity);
   }

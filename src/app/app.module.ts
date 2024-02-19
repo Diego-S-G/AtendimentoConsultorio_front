@@ -42,6 +42,7 @@ import { IniciarAtendimentoDialogComponent } from './components/pages/gerenciame
 import { FinalizarAtendimentoDialogComponent } from './components/pages/gerenciamento-atendimento/finalizar-atendimento-dialog/finalizar-atendimento-dialog.component';
 import { CancelarAtendimentoDialogComponent } from './components/pages/gerenciamento-atendimento/cancelar-atendimento-dialog/cancelar-atendimento-dialog.component';
 import { ApresentacaoAtendimentoComponent } from './components/pages/apresentacao-atendimento/apresentacao-atendimento.component';
+import { ExcluirTodosDialogComponent } from './components/pages/lista-atendimentos/excluir-todos-dialog/excluir-todos-dialog.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { ApresentacaoAtendimentoComponent } from './components/pages/apresentaca
     IniciarAtendimentoDialogComponent,
     FinalizarAtendimentoDialogComponent,
     CancelarAtendimentoDialogComponent,
-    ApresentacaoAtendimentoComponent
+    ApresentacaoAtendimentoComponent,
+    ExcluirTodosDialogComponent
   ],
   imports: [
     BrowserModule,

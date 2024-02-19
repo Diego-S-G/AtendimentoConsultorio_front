@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { SalaService } from 'src/app/services/sala.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class CadastroSalaComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private service: SalaService
+    private service: SalaService,
+    private _snackBar: MatSnackBar
   ) {}
 
   montarForm() {
@@ -25,10 +27,18 @@ export class CadastroSalaComponent {
   gravar() {
     this.service.post(this.form.value).subscribe(() => {
       this.limparForm();
+      this.openSnackBar();
     })
   }
 
   limparForm() {
     this.form.reset();
+  }
+
+  openSnackBar() {
+    this._snackBar.open('Sala cadastrada com sucesso!', 'Ok', {
+      horizontalPosition: 'center',
+      verticalPosition: 'top'
+    });
   }
 }
